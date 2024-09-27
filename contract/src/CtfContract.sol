@@ -14,17 +14,34 @@ contract CtfContract is Ownable {
 
     uint256 public problemId;
 
-    CtfProblem[] public ctfProblems;
+    // Store ctf challenges
+    mapping (uint256 ctfId => CtfProblem) ctfProblems;
 
     // Given user save if he has completed the ctf
     mapping (uint256 ctfId => mapping(address user => bool)) completed;
 
+    event NewCtf(uint256 indexed ctfId, string title);
     event Succeed(uint256 indexed ctfId, address indexed user);
 
     constructor(address initialOwner) Ownable(initialOwner) {}
 
-    function addCtf() public onlyOwner {
-        
+    function addCtf(
+        string memory _title, 
+        string memory _description, 
+        address _verifier
+    ) public onlyOwner {
+        // Add ctf problem
+        ctfProblems[problemId] = CtfProblem({
+            id: problemId,
+            title: _title,
+            description: _description,
+            verifier: _verifier
+        });
+
+        emit NewCtf(problemId, _title);
+
+        problemId++;
     }
+
 
 }
