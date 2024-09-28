@@ -3,6 +3,8 @@ pragma solidity ^0.8.13;
 
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
+import {UltraVerifier} from "./Verifier.sol";
+
 struct CtfProblem {
     uint256 id;
     string title;
@@ -50,6 +52,15 @@ contract CtfContract is Ownable {
         emit NewCtf(problemId, _title);
 
         problemId++;
+    }
+
+    function validateProof(uint256 ctfId, bytes calldata proof, bytes32[] calldata publicInputs) public returns (bool) {
+        bool valid = UltraVerifier(ctfProblems[ctfId].verifier).verify(proof, publicInputs);
+        if (valid) {
+            completed[ctfId][msg.sender] = true;
+            emit Succeed(ctfId, msg.sender);
+        }
+        return valid;
     }
 
 

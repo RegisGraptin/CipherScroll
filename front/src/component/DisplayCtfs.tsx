@@ -7,7 +7,7 @@ import CtfCard from "./CtfCard";
 const DisplayCtfs: NextPage = () => {
 
     const { data: lastCtfId, isLoading: lastCtfLoading } = useReadContract({
-        address: "0x4d24AC17fD9f3689ebf05E1B3eC9be2323990B51",
+        address: "0x5cf749d52AFfD3A1f7a0c56B42F09Ad3AcBB8fc5",
         abi: CtfContract.abi,
         functionName: 'problemId',
         args: [],
@@ -18,7 +18,7 @@ const DisplayCtfs: NextPage = () => {
         contracts: Array.from({ length: Number(lastCtfId) }).map(
         (_, index) => ({
             abi: CtfContract.abi,
-            address: "0x4d24AC17fD9f3689ebf05E1B3eC9be2323990B51",
+            address: "0x5cf749d52AFfD3A1f7a0c56B42F09Ad3AcBB8fc5",
             functionName: "getCtfProblems",
             args: [index],
         })
