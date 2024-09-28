@@ -1,4 +1,6 @@
 # CipherScroll - New CTF platform on-chain
+> Build for: Level Up - Scroll Hackathon
+
 
 ## Presentation
 
