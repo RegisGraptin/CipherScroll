@@ -24,14 +24,14 @@ const CtfPage: NextPage = () => {
     const { id } = router.query
 
     const { data: ctfProblem, isLoading: ctfProblemLoading } = useReadContract({
-        address: "0x5cf749d52AFfD3A1f7a0c56B42F09Ad3AcBB8fc5",
+        address: "0xD6ad21bCD4b40dc06FcfC3Df5Fd8E550425251D4",
         abi: CtfContract.abi,
         functionName: 'getCtfProblems',
         args: [Number(id) - 1],
     })
 
     const { data: userCompleted, isLoading: userCompletedLoading } = useReadContract({
-        address: "0x5cf749d52AFfD3A1f7a0c56B42F09Ad3AcBB8fc5",
+        address: "0xD6ad21bCD4b40dc06FcfC3Df5Fd8E550425251D4",
         abi: CtfContract.abi,
         functionName: 'getUserCompleted',
         args: [Number(id) - 1, address],
@@ -77,7 +77,7 @@ const CtfPage: NextPage = () => {
             
             writeContract({
                 abi: CtfContract.abi,
-                address: '0x5cf749d52AFfD3A1f7a0c56B42F09Ad3AcBB8fc5',
+                address: '0xD6ad21bCD4b40dc06FcfC3Df5Fd8E550425251D4',
                 functionName: 'validateProof',
                 args: [
                     0,
@@ -156,7 +156,6 @@ const CtfPage: NextPage = () => {
             </section>
 
             <section>
-                {data}
                 <hr/>
                 {error && (
                     <div>Error: {(error as BaseError).shortMessage || error.message}</div>

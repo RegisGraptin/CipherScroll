@@ -1,12 +1,12 @@
 
-fn main(message : pub str<32>) {
-    let expected_message = "aGVsbG9fd29ybGRfY3RmX3Bhc3N3b3Jk";
+fn main(message : pub str<24>) {
+    let expected_message = "hello_world_ctf_password";
     assert(message == expected_message);
 }
 
 #[test]
 fn test_main() {
-    main("aGVsbG9fd29ybGRfY3RmX3Bhc3N3b3Jk");
+    main("hello_world_ctf_password");
 
     // Uncomment to make test fail
     // main(1, 1);
