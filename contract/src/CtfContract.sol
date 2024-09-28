@@ -23,6 +23,15 @@ contract CtfContract is Ownable {
     event NewCtf(uint256 indexed ctfId, string title);
     event Succeed(uint256 indexed ctfId, address indexed user);
 
+    // Access functions
+    function getCtfProblems(uint256 ctfId) view public returns (CtfProblem memory) {
+        return ctfProblems[ctfId];
+    }
+
+    function getUserCompleted(uint256 ctfId, address user) view public returns (bool) {
+        return completed[ctfId][user];
+    }
+
     constructor(address initialOwner) Ownable(initialOwner) {}
 
     function addCtf(

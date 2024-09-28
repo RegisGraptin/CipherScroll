@@ -48,6 +48,14 @@ $ anvil
 ### Deploy
 
 ```shell
+# To load the variables in the .env file
+source .env
+
+# To deploy and verify our contract
+forge script --chain scroll script/CtfContract.s.sol:CtfContractScript --rpc-url $SCROLL_RPC_URL --broadcast --verify -vvvv
+
+
+
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 

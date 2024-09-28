@@ -22,8 +22,8 @@ const Home: NextPage = () => {
               Solve Challenges, Build Reputation, Secure the Future.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a href="#" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+              <a href="/ctf" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+              <a href="#learn_more" className="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
 
 
 
-        <section className="bg-white">
+        <section className="bg-white" id="learn_more">
           <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 
             <div className="grid mt-6">

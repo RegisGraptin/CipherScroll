@@ -1,14 +1,11 @@
 import { NextPage } from 'next';
 import { Header } from '../../component/Header';
+import { useReadContract } from 'wagmi';
+import DisplayCtfs from '../../component/DisplayCtfs';
+
+
 
 const CtfPage: NextPage = () => {
-
-    //   const { data: n_ctfs } = useReadContract({
-    //     address: "0x",
-    //     abi: abi,
-    //     functionName: '',
-    //     args: [],
-    //   })
 
     return (
 
@@ -17,10 +14,9 @@ const CtfPage: NextPage = () => {
             <Header />
 
 
-            <section className="bg-white">
+            <section className="bg-white pt-14">
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-3 lg:py-16 lg:px-6">
-                    <h2>Actuel ctf list</h2>
-
+                    <DisplayCtfs />
                 </div>
             </section>
 

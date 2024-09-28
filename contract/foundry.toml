@@ -5,3 +5,9 @@ libs = ["lib"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 remappings = ["@openzeppelin/=lib/openzeppelin-contracts/"]
+
+[rpc_endpoints]
+scroll = "${SCROLL_RPC_URL}"
+
+[etherscan]
+scroll = { key = "${ETHERSCAN_API_KEY}" }
